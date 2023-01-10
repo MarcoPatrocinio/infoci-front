@@ -26,6 +26,8 @@ interface DataProcedimentoProps {
   procedimentosTipoPontoControle: string
   procedimentosUniversoAnalisado: string
   procedimentosAmostraSelecionada: string
+  procedimentosUnidadeAmostraSelecionada: string
+  procedimentosDescricaoAmostraSelecionada: string
   procedimentosDescricaoAnalise: string
   procedimentosTipoProcedimentoAnalisado: string
   procedimentosSituacaoAnalise: string
@@ -110,6 +112,8 @@ export const Procedimentos = () => {
           procedimentosTipoPontoControle: data.procedimentosTipoPontoControle,
           procedimentosUniversoAnalisado: data.procedimentosUniversoAnalisado,
           procedimentosAmostraSelecionada: data.procedimentosAmostraSelecionada,
+          procedimentosUnidadeAmostraSelecionada: data.procedimentosUnidadeAmostraSelecionada,
+          procedimentosDescricaoAmostraSelecionada: data.procedimentosDescricaoAmostraSelecionada,
           procedimentosDescricaoAnalise: data.procedimentosDescricaoAnalise,
           procedimentosTipoProcedimentoAnalisado:
             data.procedimentosTipoProcedimentoAnalisado,
@@ -147,6 +151,8 @@ export const Procedimentos = () => {
       procedimentosTipoPontoControle: ``,
       procedimentosUniversoAnalisado: ``,
       procedimentosAmostraSelecionada: ``,
+      procedimentosUnidadeAmostraSelecionada: ``,
+      procedimentosDescricaoAmostraSelecionada: ``,
       procedimentosDescricaoAnalise: ``,
       procedimentosTipoProcedimentoAnalisado: ``,
       procedimentosSituacaoAnalise: ``,
@@ -253,9 +259,9 @@ export const Procedimentos = () => {
         context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 2 : ''
       }`,
       unidadeGestoraCodigoUnidadeGestora: ``,
-      unidadeGestoraResponsavelUnidadeGestora: ``,
-      unidadeGestoraExercicioUltimaManifestacaoControleInterno: ``,
       unidadeGestoraOpiniaoPrestacaoContasControleInterno: ``,
+      unidadeGestoraFatoRelevanteRelaci: ``,
+      unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: ``,
     }
     await axios.post(
       `${baseAPI.URL}/forms/${context.formInfo.id}/unidades`,
@@ -267,7 +273,6 @@ export const Procedimentos = () => {
   }
 
   function responseDialogUnidadeGestoraNo() {
-
     context.setValueTab(4)
     return
   }
@@ -303,6 +308,14 @@ export const Procedimentos = () => {
     procedimentosAmostraSelecionada: `${
       dataProcedimentos.length &&
       dataProcedimentos[selectProcedimento].procedimentosAmostraSelecionada
+    }`,
+    procedimentosUnidadeAmostraSelecionada: `${
+      dataProcedimentos.length &&
+      dataProcedimentos[selectProcedimento].procedimentosUnidadeAmostraSelecionada
+    }`,
+    procedimentosDescricaoAmostraSelecionada: `${
+      dataProcedimentos.length &&
+      dataProcedimentos[selectProcedimento].procedimentosDescricaoAmostraSelecionada
     }`,
     procedimentosDescricaoAnalise: `${
       dataProcedimentos.length &&
@@ -580,6 +593,50 @@ export const Procedimentos = () => {
           formik.errors.procedimentosAmostraSelecionada
         }
       />
+
+      <TextField
+        fullWidth
+        select
+        inputProps={{ MenuProps: { disableScrollLock: true } }}
+        id="procedimentosUnidadeAmostraSelecionada"
+        name="procedimentosUnidadeAmostraSelecionada"
+        value={formik.values.procedimentosUnidadeAmostraSelecionada}
+        label="Tipo de Procedimento Aplicado"
+        onChange={formik.handleChange}
+        error={
+          formik.touched.procedimentosUnidadeAmostraSelecionada &&
+          Boolean(formik.errors.procedimentosUnidadeAmostraSelecionada)
+        }
+        helperText={
+          formik.touched.procedimentosUnidadeAmostraSelecionada &&
+          formik.errors.procedimentosUnidadeAmostraSelecionada
+        }
+      >
+        <MenuItem value={1}>1 – Unidades Físicas </MenuItem>
+        <MenuItem value={2}>2 – Valores Monetários</MenuItem>
+      </TextField>
+      
+      <TextField
+        variant="outlined"
+        fullWidth
+        id="procedimentosDescricaoAmostraSelecionada"
+        label={`Descrição da Amostra (Máximo de 250 caracteres)`}
+        name="procedimentosDescricaoAmostraSelecionada"
+        value={formik.values.procedimentosDescricaoAmostraSelecionada}
+        onChange={formik.handleChange}
+        error={
+          formik.touched.procedimentosDescricaoAmostraSelecionada &&
+          Boolean(formik.errors.procedimentosDescricaoAmostraSelecionada)
+        }
+        helperText={
+          formik.touched.procedimentosDescricaoAmostraSelecionada &&
+          formik.errors.procedimentosDescricaoAmostraSelecionada
+        }
+        inputProps={{
+          maxLength: 250
+        }}
+      />
+
       <TextField
         variant="outlined"
         fullWidth
@@ -619,15 +676,8 @@ export const Procedimentos = () => {
           formik.errors.procedimentosTipoProcedimentoAnalisado
         }
       >
-        <MenuItem value={1}>1 – Auditoria de conformidade </MenuItem>
-        <MenuItem value={2}>2 – Auditoria financeira</MenuItem>
-        <MenuItem value={3}>3 – Auditoria operacional</MenuItem>
         <MenuItem value={4}>4 – Analise documental</MenuItem>
-        <MenuItem value={5}>5 – Conciliações de demonstrativos</MenuItem>
-        <MenuItem value={6}>6 – Circularização</MenuItem>
         <MenuItem value={7}>7 – Revisão Analítica</MenuItem>
-        <MenuItem value={8}>8 – Testes Substantivos</MenuItem>
-        <MenuItem value={9}>9 – Testes de Controle</MenuItem>
         <MenuItem value={10}>10 – Inspeção Física</MenuItem>
         <MenuItem value={11}>11 – Observação Direta</MenuItem>
         <MenuItem value={12}>12 – Indagação</MenuItem>
@@ -635,6 +685,8 @@ export const Procedimentos = () => {
         <MenuItem value={14}>14 – Recálculo</MenuItem>
         <MenuItem value={15}>15 – Reexecução</MenuItem>
         <MenuItem value={16}>16 – Outros</MenuItem>
+        <MenuItem value={17}>17 – Conciliação</MenuItem>
+        <MenuItem value={18}>18 – Exame de registros auxiliares</MenuItem>
       </TextField>
 
       <TextField

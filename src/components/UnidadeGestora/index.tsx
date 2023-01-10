@@ -21,9 +21,9 @@ interface DataUnidadeGestoraProps {
   unidadeGestoraIdNumRegistro: string
   unidadeGestoraNivelControleInterno: string
   unidadeGestoraCodigoUnidadeGestora: string
-  unidadeGestoraResponsavelUnidadeGestora: string
-  unidadeGestoraExercicioUltimaManifestacaoControleInterno: string
   unidadeGestoraOpiniaoPrestacaoContasControleInterno: string
+  unidadeGestoraFatoRelevanteRelaci: string
+  unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: string
 }
 
 export const UnidadeGestora = () => {
@@ -93,12 +93,12 @@ export const UnidadeGestora = () => {
             data.unidadeGestoraNivelControleInterno,
           unidadeGestoraCodigoUnidadeGestora:
             data.unidadeGestoraCodigoUnidadeGestora,
-          unidadeGestoraResponsavelUnidadeGestora:
-            data.unidadeGestoraResponsavelUnidadeGestora,
-          unidadeGestoraExercicioUltimaManifestacaoControleInterno:
-            data.unidadeGestoraExercicioUltimaManifestacaoControleInterno,
           unidadeGestoraOpiniaoPrestacaoContasControleInterno:
             data.unidadeGestoraOpiniaoPrestacaoContasControleInterno,
+          unidadeGestoraFatoRelevanteRelaci:
+            data.unidadeGestoraFatoRelevanteRelaci,
+          unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci:
+            data.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci,
         }
       },
     )
@@ -131,9 +131,9 @@ export const UnidadeGestora = () => {
         context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 2 : ''
       }`,
       unidadeGestoraCodigoUnidadeGestora: `${context.formInfo.nomeUnidadeGestora !== 'SECONT' ? context.formInfo.codigoUnidadeGestoraCidades : ''}`,
-      unidadeGestoraResponsavelUnidadeGestora: ``,
-      unidadeGestoraExercicioUltimaManifestacaoControleInterno: ``,
       unidadeGestoraOpiniaoPrestacaoContasControleInterno: ``,
+      unidadeGestoraFatoRelevanteRelaci: ``,
+      unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: ``,
     }
     await axios.post(
       `${baseAPI.URL}/forms/${context.formInfo.id}/unidades`,
@@ -184,7 +184,6 @@ export const UnidadeGestora = () => {
     setSelectUnidadeGestora(e.target.value)
   }
 
-
   const initialValues = {
     unidadeGestoraIdNumRegistro: `${
       dataUnidadeGestora.length > 0 &&
@@ -201,21 +200,21 @@ export const UnidadeGestora = () => {
       dataUnidadeGestora[selectUnidadeGestora]
         .unidadeGestoraCodigoUnidadeGestora : ''
     }`,
-    unidadeGestoraResponsavelUnidadeGestora: `${
-      dataUnidadeGestora.length > 0 &&
-      dataUnidadeGestora[selectUnidadeGestora]
-        .unidadeGestoraResponsavelUnidadeGestora
-    }`,
-    unidadeGestoraExercicioUltimaManifestacaoControleInterno: `${
-      dataUnidadeGestora.length > 0 &&
-      dataUnidadeGestora[selectUnidadeGestora]
-        .unidadeGestoraExercicioUltimaManifestacaoControleInterno
-    }`,
     unidadeGestoraOpiniaoPrestacaoContasControleInterno: `${
       dataUnidadeGestora.length > 0
         ? dataUnidadeGestora[selectUnidadeGestora]
             .unidadeGestoraOpiniaoPrestacaoContasControleInterno
         : ''
+    }`,
+    unidadeGestoraFatoRelevanteRelaci: `${
+      dataUnidadeGestora.length > 0 &&
+      dataUnidadeGestora[selectUnidadeGestora]
+        .unidadeGestoraFatoRelevanteRelaci
+    }`,
+    unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: `${
+      dataUnidadeGestora.length > 0 &&
+      dataUnidadeGestora[selectUnidadeGestora]
+        .unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci
     }`,
   }
 
@@ -388,50 +387,6 @@ export const UnidadeGestora = () => {
         />
       )}
     /> }
-
-      <TextField
-        variant="outlined"
-        fullWidth
-        id="unidadeGestoraResponsavelUnidadeGestora"
-        label="Responsável pela Unidade Gestora"
-        name="unidadeGestoraResponsavelUnidadeGestora"
-        value={formik.values.unidadeGestoraResponsavelUnidadeGestora}
-        onChange={formik.handleChange}
-        error={
-          formik.touched.unidadeGestoraResponsavelUnidadeGestora &&
-          Boolean(formik.errors.unidadeGestoraResponsavelUnidadeGestora)
-        }
-        helperText={
-          formik.touched.unidadeGestoraResponsavelUnidadeGestora &&
-          formik.errors.unidadeGestoraResponsavelUnidadeGestora
-        }
-      />
-
-      <TextField
-        variant="outlined"
-        fullWidth
-        id="unidadeGestoraExercicioUltimaManifestacaoControleInterno"
-        label="Exercício da Última Manifestação do Controle Interno"
-        name="unidadeGestoraExercicioUltimaManifestacaoControleInterno"
-        value={
-          formik.values.unidadeGestoraExercicioUltimaManifestacaoControleInterno
-        }
-        onChange={formik.handleChange}
-        error={
-          formik.touched
-            .unidadeGestoraExercicioUltimaManifestacaoControleInterno &&
-          Boolean(
-            formik.errors
-              .unidadeGestoraExercicioUltimaManifestacaoControleInterno,
-          )
-        }
-        helperText={
-          formik.touched
-            .unidadeGestoraExercicioUltimaManifestacaoControleInterno &&
-          formik.errors.unidadeGestoraExercicioUltimaManifestacaoControleInterno
-        }
-      />
-
       <TextField
         fullWidth
         select
@@ -458,6 +413,94 @@ export const UnidadeGestora = () => {
         <MenuItem value={2}>2 - Regular com ressalva</MenuItem>
         <MenuItem value={3}>3 - Irregular</MenuItem>
         <MenuItem value={4}>4 - Não foi emitida opinião</MenuItem>
+      </TextField>
+
+      <TextField
+        fullWidth
+        select
+        inputProps={{ MenuProps: { disableScrollLock: true } }}
+        id="unidadeGestoraFatoRelevanteRelaci"
+        name="unidadeGestoraFatoRelevanteRelaci"
+        value={
+          formik.values.unidadeGestoraFatoRelevanteRelaci
+        }
+        label="O Controle Interno relatou algum fato 
+          relevante no RELACI, de forma a dar ciência 
+          ao Tribunal de Contas?"
+        onChange={formik.handleChange}
+        error={
+          formik.touched.unidadeGestoraFatoRelevanteRelaci &&
+          Boolean(
+            formik.errors.unidadeGestoraFatoRelevanteRelaci,
+          )
+        }
+        helperText={
+          formik.touched.unidadeGestoraFatoRelevanteRelaci &&
+          formik.errors.unidadeGestoraFatoRelevanteRelaci
+        }
+      >
+        <MenuItem value={1}>1 - Sim</MenuItem>
+        <MenuItem value={2}>2 - Não</MenuItem>
+      </TextField>
+
+      <TextField
+        fullWidth
+        select
+        inputProps={{ MenuProps: { disableScrollLock: true } }}
+        id="unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci"
+        name="unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci"
+        value={
+          formik.values.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci
+        }
+        label="Assunto principal do fato relevante relatadono RELACI"
+        onChange={formik.handleChange}
+        error={
+          formik.touched.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci &&
+          Boolean(
+            formik.errors.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci,
+          )
+        }
+        helperText={
+          formik.touched.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci &&
+          formik.errors.unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci
+        }
+      >
+        <MenuItem value={1}>
+          1 - Licitações, Contratos e Convênios
+        </MenuItem>
+        <MenuItem value={2}>
+          2 - Folha de Pagamento e Concessão de Vantagens
+        </MenuItem>
+        <MenuItem value={3}>
+          3 - Registro de Atos de Pessoal
+        </MenuItem>
+        <MenuItem value={4}>
+          4 - Gestão de Previdência dos RPPS
+        </MenuItem>
+        <MenuItem value={5}>
+          5 - Concessão de diárias e suprimento de fundos
+        </MenuItem>
+        <MenuItem value={6}>
+          6 - Instrumentos de transparência
+        </MenuItem>
+        <MenuItem value={7}>
+          7 - Gestão Fiscal
+        </MenuItem>
+        <MenuItem value={8}>
+          8 - Gestão Orçamentária e Financeira
+        </MenuItem>
+        <MenuItem value={9}>
+          9 - Gestão Patrimonial
+        </MenuItem>
+        <MenuItem value={10}>
+          10 - Saúde e Educação
+        </MenuItem>
+        <MenuItem value={11}>
+          11 - Obras e Serviços de Engenharia
+        </MenuItem>
+        <MenuItem value={99}>
+          99 - Outros
+        </MenuItem>
       </TextField>
 
       <div data-button="next-previous">

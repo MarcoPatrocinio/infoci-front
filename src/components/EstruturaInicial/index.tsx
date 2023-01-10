@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import {Button, IconButton } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
 import { TextField, MenuItem } from '@mui/material'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
@@ -118,6 +118,7 @@ export const EstruturaInicial = () => {
         }
       },
     )
+
     return dataGet
   }
 
@@ -296,7 +297,6 @@ export const EstruturaInicial = () => {
   return (
     <EstruturaInicialStyle onSubmit={formik.handleSubmit}>
       <div data-header="header-form">
-
         <div data-input="input-options">
           {dataEstruturaInicial.length > 1 && (
             <TextField
@@ -459,7 +459,7 @@ export const EstruturaInicial = () => {
         name="estruturaInicialNormaInternaGestaoOrcamentaria"
         value={formik.values.estruturaInicialNormaInternaGestaoOrcamentaria}
         label="Normas internas estabelecendo procedimentos Orçamentária
-          para avaliação da Gestão"
+          para execução da Gestão"
         onChange={formik.handleChange}
         error={
           formik.touched.estruturaInicialNormaInternaGestaoOrcamentaria &&
@@ -470,13 +470,15 @@ export const EstruturaInicial = () => {
           formik.errors.estruturaInicialNormaInternaGestaoOrcamentaria
         }
       >
-        <MenuItem value={1}>1 - Existem somente os normativos</MenuItem>
+        <MenuItem value={1}>
+          1 - Existem somente os normativos
+        </MenuItem>
         <MenuItem value={2}>
           2 - Existem normativos e fluxos desenhados
         </MenuItem>
         <MenuItem value={3}>
           3 - Existem normativos, fluxos e são de amplo conhecimento de toda a
-          administração
+          administração envolvida no processo
         </MenuItem>
         <MenuItem value={4}>
           4 - Não existem normas internas definidas no âmbito desta temática
@@ -501,13 +503,15 @@ export const EstruturaInicial = () => {
           formik.errors.estruturaInicialNormaInternaGestaoFinanceira
         }
       >
-        <MenuItem value={1}>1 - Existem somente os normativos</MenuItem>
+        <MenuItem value={1}>
+          1 - Existem somente os normativos
+        </MenuItem>
         <MenuItem value={2}>
           2 - Existem normativos e fluxos desenhados
         </MenuItem>
         <MenuItem value={3}>
           3 - Existem normativos, fluxos e são de amplo conhecimento de toda a
-          administração
+          administração envolvida no processo
         </MenuItem>
         <MenuItem value={4}>
           4 - Não existem normas internas definidas no âmbito desta temática
@@ -532,13 +536,15 @@ export const EstruturaInicial = () => {
           formik.errors.estruturaInicialNormaInternaGestaoPatrimonial
         }
       >
-        <MenuItem value={1}>1 - Existem somente os normativos</MenuItem>
+        <MenuItem value={1}>
+          1 - Existem somente os normativos
+        </MenuItem>
         <MenuItem value={2}>
           2 - Existem normativos e fluxos desenhados
         </MenuItem>
         <MenuItem value={3}>
           3 - Existem normativos, fluxos e são de amplo conhecimento de toda a
-          administração
+          administração envolvida no processo
         </MenuItem>
         <MenuItem value={4}>
           4 - Não existem normas internas definidas no âmbito desta temática
@@ -563,13 +569,15 @@ export const EstruturaInicial = () => {
           formik.errors.estruturaInicialNormaInternaGestaoFiscal
         }
       >
-        <MenuItem value={1}>1 - Existem somente os normativos</MenuItem>
+        <MenuItem value={1}>
+          1 - Existem somente os normativos
+        </MenuItem>
         <MenuItem value={2}>
           2 - Existem normativos e fluxos desenhados
         </MenuItem>
         <MenuItem value={3}>
           3 - Existem normativos, fluxos e são de amplo conhecimento de toda a
-          administração
+          administração envolvida no processo
         </MenuItem>
         <MenuItem value={4}>
           4 - Não existem normas internas definidas no âmbito desta temática
@@ -583,7 +591,7 @@ export const EstruturaInicial = () => {
         id="estruturaInicialNormaInternaDemContabeis"
         name="estruturaInicialNormaInternaDemContabeis"
         value={formik.values.estruturaInicialNormaInternaDemContabeis}
-        label="Normas internas estabelecendo procedimentos para avaliação da conformidade da política e escrituração contábil, e elaboração das Demonstrações Contábeis"
+        label="Normas internas estabelecendo procedimentos para execução da conformidade da política e escrituração contábil, e elaboração das Demonstrações Contábeis"
         onChange={formik.handleChange}
         error={
           formik.touched.estruturaInicialNormaInternaDemContabeis &&
@@ -600,7 +608,7 @@ export const EstruturaInicial = () => {
         </MenuItem>
         <MenuItem value={3}>
           3 - Existem normativos, fluxos e são de amplo conhecimento de toda a
-          administração
+          administração envolvida no processo
         </MenuItem>
         <MenuItem value={4}>
           4 - Não existem normas internas definidas no âmbito desta temática

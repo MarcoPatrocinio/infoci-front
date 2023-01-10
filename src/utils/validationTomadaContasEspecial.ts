@@ -16,6 +16,10 @@ const validationSchema = yup.object({
     .required('O campo é obrigatório')
     .max(11, 'Máximo de 11 dígitos'),
 
+    tomadaContasEspecialTipoTce: yup
+    .number()
+    .required('O campo é obrigatório'),
+
     tomadaContasEspecialProcesso: yup
     .string()
     .required('O campo é obrigatório')
@@ -50,14 +54,11 @@ const validationSchema = yup.object({
     .required('O campo é obrigatório')
     .matches(regexDecimal, 'Apenas números com ponto decimal ex: 100.00, 10152.20, 85424.65, etc.'),
   
-    tomadaContasEspecialSituacaoEm31do12: yup
-    .number()
-    .required('O campo é obrigatório'),
+    tomadaContasEspecialSituacaoEm31do12InstauradaUg: yup
+    .number(),
 
-    tomadaContasEspecialMotivoBaixaDebito: yup
+    tomadaContasEspecialSituacaoEm31do12EnviadaTcees: yup
     .number()
-    .when('tomadaContasEspecialSituacaoEm31do12', (tomadaContasEspecialSituacaoEm31do12, field) => 
-      tomadaContasEspecialSituacaoEm31do12 === 4 ? field.required('O campo é obrigatório') : field)
     
 });
 

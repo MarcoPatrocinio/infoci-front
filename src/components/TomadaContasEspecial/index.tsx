@@ -21,6 +21,7 @@ interface DataTomadaContasEspecialProps {
   id: number
   tomadaContasEspecialIdNumRegistro: string
   tomadaContasEspecialCodigoUnidadeGestora: string
+  tomadaContasEspecialTipoTce: string
   tomadaContasEspecialProcesso: string
   tomadaContasEspecialAnoProcesso: string
   tomadaContasEspecialFatoMotivo: string
@@ -28,8 +29,8 @@ interface DataTomadaContasEspecialProps {
   tomadaContasEspecialDataInstauracao: string
   tomadaContasEspecialDataEnvioTribunalContas: string
   tomadaContasEspecialValorDebito: string
-  tomadaContasEspecialSituacaoEm31do12: string
-  tomadaContasEspecialMotivoBaixaDebito: string
+  tomadaContasEspecialSituacaoEm31do12InstauradaUg: string
+  tomadaContasEspecialSituacaoEm31do12EnviadaTcees: string
 }
 
 export const TomadaContasEspecial = () => {
@@ -110,6 +111,8 @@ export const TomadaContasEspecial = () => {
             data.tomadaContasEspecialIdNumRegistro,
           tomadaContasEspecialCodigoUnidadeGestora:
             data.tomadaContasEspecialCodigoUnidadeGestora,
+          tomadaContasEspecialTipoTce:
+            data.tomadaContasEspecialTipoTce,
           tomadaContasEspecialProcesso: data.tomadaContasEspecialProcesso,
           tomadaContasEspecialAnoProcesso: data.tomadaContasEspecialAnoProcesso,
           tomadaContasEspecialFatoMotivo: data.tomadaContasEspecialFatoMotivo,
@@ -119,10 +122,10 @@ export const TomadaContasEspecial = () => {
           tomadaContasEspecialDataEnvioTribunalContas:
             data.tomadaContasEspecialDataEnvioTribunalContas,
           tomadaContasEspecialValorDebito: data.tomadaContasEspecialValorDebito,
-          tomadaContasEspecialSituacaoEm31do12:
-            data.tomadaContasEspecialSituacaoEm31do12,
-          tomadaContasEspecialMotivoBaixaDebito:
-            data.tomadaContasEspecialMotivoBaixaDebito,
+          tomadaContasEspecialSituacaoEm31do12InstauradaUg:
+            data.tomadaContasEspecialSituacaoEm31do12InstauradaUg,
+          tomadaContasEspecialSituacaoEm31do12EnviadaTcees:
+            data.tomadaContasEspecialSituacaoEm31do12EnviadaTcees
         }
       },
     )
@@ -155,6 +158,7 @@ export const TomadaContasEspecial = () => {
     const valuesTCE = {
       tomadaContasEspecialIdNumRegistro: ``,
       tomadaContasEspecialCodigoUnidadeGestora: `${context.formInfo.nomeUnidadeGestora !== 'SECONT' ? context.formInfo.codigoUnidadeGestoraCidades : ''}`,
+      tomadaContasEspecialTipoTce: ``,
       tomadaContasEspecialProcesso: ``,
       tomadaContasEspecialAnoProcesso: ``,
       tomadaContasEspecialFatoMotivo: ``,
@@ -162,8 +166,8 @@ export const TomadaContasEspecial = () => {
       tomadaContasEspecialDataInstauracao: ``,
       tomadaContasEspecialDataEnvioTribunalContas: ``,
       tomadaContasEspecialValorDebito: ``,
-      tomadaContasEspecialSituacaoEm31do12: ``,
-      tomadaContasEspecialMotivoBaixaDebito: ``,
+      tomadaContasEspecialSituacaoEm31do12InstauradaUg: ``,
+      tomadaContasEspecialSituacaoEm31do12EnviadaTcees: ``
     }
     await axios.post(
       `${baseAPI.URL}/forms/${context.formInfo.id}/tomada_contas`,
@@ -248,9 +252,9 @@ export const TomadaContasEspecial = () => {
         context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 2 : ''
       }`,
       unidadeGestoraCodigoUnidadeGestora: ``,
-      unidadeGestoraResponsavelUnidadeGestora: ``,
-      unidadeGestoraExercicioUltimaManifestacaoControleInterno: ``,
       unidadeGestoraOpiniaoPrestacaoContasControleInterno: ``,
+      unidadeGestoraFatoRelevanteRelaci: ``,
+      unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: ``,
     }
     await axios.post(
       `${baseAPI.URL}/forms/${context.formInfo.id}/unidades`,
@@ -277,6 +281,11 @@ export const TomadaContasEspecial = () => {
       dataTomadaContasEspecial.length ?
       dataTomadaContasEspecial[selectTomadaContasEspecial]
         .tomadaContasEspecialCodigoUnidadeGestora : ''
+    }`,
+    tomadaContasEspecialTipoTce: `${
+      dataTomadaContasEspecial.length ?
+      dataTomadaContasEspecial[selectTomadaContasEspecial]
+        .tomadaContasEspecialTipoTce : ''
     }`,
     tomadaContasEspecialProcesso: `${
       dataTomadaContasEspecial.length &&
@@ -314,16 +323,16 @@ export const TomadaContasEspecial = () => {
       dataTomadaContasEspecial[selectTomadaContasEspecial]
         .tomadaContasEspecialValorDebito
     }`,
-    tomadaContasEspecialSituacaoEm31do12: `${
+    tomadaContasEspecialSituacaoEm31do12InstauradaUg: `${
       dataTomadaContasEspecial.length
         ? dataTomadaContasEspecial[selectTomadaContasEspecial]
-            .tomadaContasEspecialSituacaoEm31do12
+            .tomadaContasEspecialSituacaoEm31do12InstauradaUg
         : ''
     }`,
-    tomadaContasEspecialMotivoBaixaDebito: `${
+    tomadaContasEspecialSituacaoEm31do12EnviadaTcees: `${
       dataTomadaContasEspecial.length
         ? dataTomadaContasEspecial[selectTomadaContasEspecial]
-            .tomadaContasEspecialMotivoBaixaDebito
+            .tomadaContasEspecialSituacaoEm31do12EnviadaTcees
         : ''
     }`,
   }
@@ -455,6 +464,7 @@ export const TomadaContasEspecial = () => {
         
       }}
      
+      
       renderInput={(params) => (
         <TextField
           {...params}
@@ -475,6 +485,32 @@ export const TomadaContasEspecial = () => {
         />
       )}
     /> }
+
+      <TextField
+        fullWidth
+        select
+        inputProps={{ MenuProps: { disableScrollLock: true } }}
+        id="tomadaContasEspecialTipoTce"
+        name="tomadaContasEspecialTipoTce"
+        value={formik.values.tomadaContasEspecialTipoTce}
+        label="Tipo de Tomada de Contas Especial"
+        onChange={formik.handleChange}
+        error={
+          formik.touched.tomadaContasEspecialTipoTce &&
+          Boolean(formik.errors.tomadaContasEspecialTipoTce)
+        }
+        helperText={
+          formik.touched.tomadaContasEspecialTipoTce &&
+          formik.errors.tomadaContasEspecialTipoTce
+        }
+      >
+        <MenuItem value={1}>
+          1 – Instaurada de ofício
+        </MenuItem>
+        <MenuItem value={2}>
+          2 – Determinada pelo TCEES
+        </MenuItem>
+      </TextField>
 
       <TextField
         variant="outlined"
@@ -560,9 +596,9 @@ export const TomadaContasEspecial = () => {
         variant="outlined"
         fullWidth
         id="tomadaContasEspecialDataCiencia"
-        label="Data do evento ou, quando desconhecida, da
-      data da ciência do fato pela autoridade
-      competente (Inciso I, do art. 2o da IN 32/2014)."
+        label="Data do evento ou, quando desconhecida, 
+          data da ciência do fato pela autoridade
+          competente (Inciso I, do art. 2o da IN 32/2014)."
         name="tomadaContasEspecialDataCiencia"
         value={formik.values.tomadaContasEspecialDataCiencia}
         onChange={formik.handleChange}
@@ -618,7 +654,7 @@ export const TomadaContasEspecial = () => {
         variant="outlined"
         fullWidth
         id="tomadaContasEspecialValorDebito"
-        label="Valor Original do Débito"
+        label="Valor Original do Débito - R$"
         name="tomadaContasEspecialValorDebito"
         value={formik.values.tomadaContasEspecialValorDebito}
         onChange={formik.handleChange}
@@ -636,66 +672,58 @@ export const TomadaContasEspecial = () => {
         fullWidth
         select
         inputProps={{ MenuProps: { disableScrollLock: true } }}
-        id="tomadaContasEspecialSituacaoEm31do12"
-        name="tomadaContasEspecialSituacaoEm31do12"
-        value={formik.values.tomadaContasEspecialSituacaoEm31do12}
-        label="Situação da Tomada de Contas Especial em
-      31 de dezembro do Exercício referência da
-      Prestação de Contas Anual"
+        id="tomadaContasEspecialSituacaoEm31do12InstauradaUg"
+        name="tomadaContasEspecialSituacaoEm31do12InstauradaUg"
+        value={formik.values.tomadaContasEspecialSituacaoEm31do12InstauradaUg}
+        label="Situação da Tomada de Contas Especial em 
+          31 de dezembro do Exercício referência da 
+          Prestação de Contas Anual, referente as 
+          TCE’s instauradas na UG e ainda não 
+          encaminhadas ao TCEES.
+          "
         onChange={formik.handleChange}
         error={
-          formik.touched.tomadaContasEspecialSituacaoEm31do12 &&
-          Boolean(formik.errors.tomadaContasEspecialSituacaoEm31do12)
+          formik.touched.tomadaContasEspecialSituacaoEm31do12InstauradaUg &&
+          Boolean(formik.errors.tomadaContasEspecialSituacaoEm31do12InstauradaUg)
         }
         helperText={
-          formik.touched.tomadaContasEspecialSituacaoEm31do12 &&
-          formik.errors.tomadaContasEspecialSituacaoEm31do12
+          formik.touched.tomadaContasEspecialSituacaoEm31do12InstauradaUg &&
+          formik.errors.tomadaContasEspecialSituacaoEm31do12InstauradaUg
         }
       >
-        <MenuItem value={1}>1 - Em instrução dentro do prazo;</MenuItem>
-        <MenuItem value={2}>2 - Em instrução fora do prazo;</MenuItem>
-        <MenuItem value={3}>
-          3 - Em complementação de informações determinada pelo Tribunal de
-          Contas;
-        </MenuItem>
-        <MenuItem value={4}>4 - Finalizada;</MenuItem>
+        <MenuItem value={1}>1 - Aguardando o início da instrução</MenuItem>
+        <MenuItem value={2}>2 - Em instrução dentro do prazo</MenuItem>
+        <MenuItem value={3}>3 - Em instrução fora do prazo</MenuItem>
+        <MenuItem value={4}>4 - Finalizada – Dispensado o encaminhamento ao TCEES – art. 9º, IN 32/2014;</MenuItem>
+        <MenuItem value={5}>5 - Finalizada - Arquivada antes do encaminhamento ao TCEES – art. 10, IN 32/2014</MenuItem>
       </TextField>
 
       <TextField
         fullWidth
         select
         inputProps={{ MenuProps: { disableScrollLock: true } }}
-        id="tomadaContasEspecialMotivoBaixaDebito"
-        name="tomadaContasEspecialMotivoBaixaDebito"
-        value={formik.values.tomadaContasEspecialMotivoBaixaDebito}
-        label="Motivo da Baixa da Responsabilidade pelo
-      Débito"
+        id="tomadaContasEspecialSituacaoEm31do12EnviadaTcees"
+        name="tomadaContasEspecialSituacaoEm31do12EnviadaTcees"
+        value={formik.values.tomadaContasEspecialSituacaoEm31do12EnviadaTcees}
+        label="Situação da Tomada de Contas Especial em 
+          31 de dezembro do Exercício referência da 
+          Prestação de Contas Anual, referente as 
+          TCE’s já encaminhadas ao TCEES.
+          "
         onChange={formik.handleChange}
         error={
-          formik.touched.tomadaContasEspecialMotivoBaixaDebito &&
-          Boolean(formik.errors.tomadaContasEspecialMotivoBaixaDebito)
+          formik.touched.tomadaContasEspecialSituacaoEm31do12EnviadaTcees &&
+          Boolean(formik.errors.tomadaContasEspecialSituacaoEm31do12EnviadaTcees)
         }
         helperText={
-          formik.touched.tomadaContasEspecialMotivoBaixaDebito &&
-          formik.errors.tomadaContasEspecialMotivoBaixaDebito
+          formik.touched.tomadaContasEspecialSituacaoEm31do12EnviadaTcees &&
+          formik.errors.tomadaContasEspecialSituacaoEm31do12EnviadaTcees
         }
       >
-        <MenuItem value={1}>
-          1 - Elisão da responsabilidade pelo dano inicialmente imputada ao
-          responsável;
-        </MenuItem>
-        <MenuItem value={2}>2 - Ausência de comprovação do dano;</MenuItem>
-        <MenuItem value={3}>
-          3 - Arquivamento do processo por falta de pressupostos de instauração
-          ou do seu desenvolvimento regular;
-        </MenuItem>
-        <MenuItem value={4}>
-          4 - Contas consideradas iliquidáveis, nos termos do art. 90 da Lei
-          Complementar Estadual n° 621/2012;
-        </MenuItem>
-        <MenuItem value={5}>
-          5 - Quitação ao responsável pelo recolhimento do débito.
-        </MenuItem>
+        <MenuItem value={1}>1 - Finalizada - Aguardando deliberação do TCEES</MenuItem>
+        <MenuItem value={2}>2 - Com decisão do TCEES pela condenação ao ressarcimento / Sem baixa da responsabilidade pelo débito</MenuItem>
+        <MenuItem value={3}>3 - Com decisão do TCEES pela baixa da responsabilidade pelo débito – art. 20, da IN 32/2014</MenuItem>
+        <MenuItem value={4}>4 - Em complementação de informações, após retorno determinado pelo TCEES – art. 15, IN 32/2014</MenuItem>
       </TextField>
 
       <div data-button="next-previous">
