@@ -29,7 +29,8 @@ const validationSchema = yup.object({
 
     unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci: yup
     .number()
-    .required('O campo é obrigatório'),
+    .when('unidadeGestoraFatoRelevanteRelaci', (unidadeGestoraFatoRelevanteRelaci, field) => 
+      unidadeGestoraFatoRelevanteRelaci === 1 ? field.required('O campo é obrigatório') : field),
 });
 
 const validationUnidadeGestora = {

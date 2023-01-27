@@ -17,7 +17,7 @@ const validationSchema = yup.object({
     .max(11, 'Máximo de 11 dígitos'),
 
     tomadaContasEspecialTipoTce: yup
-    .number()
+    .string()
     .required('O campo é obrigatório'),
 
     tomadaContasEspecialProcesso: yup
@@ -55,15 +55,18 @@ const validationSchema = yup.object({
     .matches(regexDecimal, 'Apenas números com ponto decimal ex: 100.00, 10152.20, 85424.65, etc.'),
   
     tomadaContasEspecialSituacaoEm31do12InstauradaUg: yup
-    .number(),
-
+    .number()
+    .when('tomadaContasEspecialDataEnvioTribunalContas', (tomadaContasEspecialDataEnvioTribunalContas, field) => 
+    !regexDate.test(tomadaContasEspecialDataEnvioTribunalContas) ? field.required('O campo é obrigatório') : field),
+      
     tomadaContasEspecialSituacaoEm31do12EnviadaTcees: yup
     .number()
+    .when('tomadaContasEspecialDataEnvioTribunalContas', (tomadaContasEspecialDataEnvioTribunalContas, field) => 
+    regexDate.test(tomadaContasEspecialDataEnvioTribunalContas) ? field.required('O campo é obrigatório') : field)
     
 });
 
 const validationEstruturaInicial = {
-  
   validationSchema
 }
 export default validationEstruturaInicial;

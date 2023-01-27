@@ -261,6 +261,11 @@ export const UnidadeGestora = () => {
     setButtonId(e.target.parentNode.id)
   }
 
+  useEffect(() => {
+    if(formik.values.unidadeGestoraFatoRelevanteRelaci != '1'){
+      formik.setFieldValue('unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci', '')
+    }
+  }, [formik.values.unidadeGestoraFatoRelevanteRelaci])
   return (
     <UnidadeGestoraStyle onSubmit={formik.handleSubmit}>
       <div data-header="header-form">
@@ -502,7 +507,7 @@ export const UnidadeGestora = () => {
           label="O Controle Interno relatou algum fato 
             relevante no RELACI, de forma a dar ciência 
             ao Tribunal de Contas?"
-          onChange={formik.handleChange}
+          onChange={(e) => {formik.handleChange(e); if(e.target.value == "2"){formik.setFieldValue("unidadeGestoraAssuntoPrincipalFatoRelevanteRelaci", "")}}}
           error={
             formik.touched.unidadeGestoraFatoRelevanteRelaci &&
             Boolean(
@@ -514,6 +519,7 @@ export const UnidadeGestora = () => {
             formik.errors.unidadeGestoraFatoRelevanteRelaci
           }
         >
+          <MenuItem value="">{`Em Branco`}</MenuItem>
           <MenuItem value={1}>1 - Sim</MenuItem>
           <MenuItem value={2}>2 - Não</MenuItem>
         </TextField>
@@ -528,7 +534,7 @@ export const UnidadeGestora = () => {
         </Tooltip>
       </Box>
 
-      <Box sx={{display: 'flex', gap: '1rem'}}>
+      <Box sx={{display: formik.values.unidadeGestoraFatoRelevanteRelaci == "1"?'flex': 'none', gap: '1rem'}}>
         <TextField
           fullWidth
           select

@@ -249,14 +249,14 @@ export const GenerateXML = () => {
 
       const dataGet: Array<DataTomadaContasEspecialProps> = await response.data.map(
         (data: DataTomadaContasEspecialProps) => {
+          console.log(data)
           return {
             id: data.id,
             tomadaContasEspecialIdNumRegistro:
               data.tomadaContasEspecialIdNumRegistro,
             tomadaContasEspecialCodigoUnidadeGestora:
               data.tomadaContasEspecialCodigoUnidadeGestora,
-            tomadaContasEspecialsTipoTce:
-              data.tomadaContasEspecialTipoTce,
+            tomadaContasEspecialTipoTce: data.tomadaContasEspecialTipoTce,
             tomadaContasEspecialProcesso: data.tomadaContasEspecialProcesso,
             tomadaContasEspecialAnoProcesso:
               data.tomadaContasEspecialAnoProcesso,

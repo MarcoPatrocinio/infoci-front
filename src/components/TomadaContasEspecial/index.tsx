@@ -49,6 +49,8 @@ const modalStyle = {
   p: "2rem",
 };
 
+const regexDate = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/;
+
 export const TomadaContasEspecial = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -357,6 +359,7 @@ export const TomadaContasEspecial = () => {
         : ''
     }`,
   }
+
   const validationSchema = validationTomadaContasEspecial.validationSchema
 
   const formik = useFormik({
@@ -376,6 +379,10 @@ export const TomadaContasEspecial = () => {
     },
   })
 
+  const validaEnvio = () =>{
+    formik.setFieldValue('tomadaContasEspecialSituacaoEm31do12InstauradaUg',``);
+    formik.setFieldValue('tomadaContasEspecialSituacaoEm31do12EnviadaTcees',``);
+  }
   return (
     <TomadaContasEspecialraStyle onSubmit={formik.handleSubmit}>
       <div data-header="headerForm">
@@ -457,7 +464,7 @@ export const TomadaContasEspecial = () => {
           </IconButton>
         </Tooltip>
       </Box>
-{context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 
+      {context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
           variant="outlined"
@@ -756,7 +763,7 @@ export const TomadaContasEspecial = () => {
         Contas Especial"
           name="tomadaContasEspecialDataEnvioTribunalContas"
           value={formik.values.tomadaContasEspecialDataEnvioTribunalContas}
-          onChange={formik.handleChange}
+          onChange={(e) => {formik.handleChange(e); validaEnvio()}}
           error={
             formik.touched.tomadaContasEspecialDataEnvioTribunalContas &&
             Boolean(formik.errors.tomadaContasEspecialDataEnvioTribunalContas)
@@ -806,7 +813,7 @@ export const TomadaContasEspecial = () => {
         </Tooltip>
       </Box>
 
-      <Box sx={{display: 'flex', gap: '1rem'}}>
+      <Box sx={{display: formik.values.tomadaContasEspecialDataEnvioTribunalContas === "" ?'flex':'none' , gap: '1rem'}}>
         <TextField
           fullWidth
           select
@@ -847,7 +854,7 @@ export const TomadaContasEspecial = () => {
         </Tooltip>
       </Box>
 
-      <Box sx={{display: 'flex', gap: '1rem'}}>
+      <Box sx={{display: formik.values.tomadaContasEspecialDataEnvioTribunalContas !== "" ?'flex':'none', gap: '1rem'}}>
         <TextField
           fullWidth
           select
@@ -901,7 +908,7 @@ export const TomadaContasEspecial = () => {
           aria-label="Próximo formulário."
           type="submit"
           id="next"
-          onClick={getIdButton}
+          onClick={() => getIdButton}
         >
           <ArrowCircleRightIcon />
         </IconButton>
