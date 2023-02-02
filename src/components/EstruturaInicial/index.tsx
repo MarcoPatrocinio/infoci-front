@@ -389,15 +389,7 @@ export const EstruturaInicial = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -425,15 +417,7 @@ export const EstruturaInicial = () => {
           <MenuItem value={1}>1 – Unidade Central </MenuItem>
           <MenuItem value={2}>2 – Unidade Setorial</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -455,15 +439,7 @@ export const EstruturaInicial = () => {
             formik.errors.estruturaInicialQuantidadeTotalServidores
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -485,15 +461,7 @@ export const EstruturaInicial = () => {
             formik.errors.estruturaInicialQuantidadeServidoresEfetivos
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -516,15 +484,7 @@ export const EstruturaInicial = () => {
             formik.errors.estruturaInicialQuantidadeContadores
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -561,15 +521,7 @@ export const EstruturaInicial = () => {
             4 - Não existem normas internas definidas no âmbito desta temática
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -605,15 +557,7 @@ export const EstruturaInicial = () => {
             4 - Não existem normas internas definidas no âmbito desta temática
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -649,15 +593,7 @@ export const EstruturaInicial = () => {
             4 - Não existem normas internas definidas no âmbito desta temática
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -693,15 +629,7 @@ export const EstruturaInicial = () => {
             4 - Não existem normas internas definidas no âmbito desta temática
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -735,15 +663,7 @@ export const EstruturaInicial = () => {
             4 - Não existem normas internas definidas no âmbito desta temática
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <div data-button="right">
         <IconButton

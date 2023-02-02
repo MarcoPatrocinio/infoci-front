@@ -36,7 +36,7 @@ export default function ModalExplicacaoCampo({ texto, video }:  ModalProps) {
                     <iframe className="iframeVideo" onLoad={() => TesteYoutube()} width="98%" height="500" src={video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen ></iframe>
                 </Box>
                 <Box sx={{display: loadError? 'block': 'none'}}>
-                    "Percebemos que você não tem acesso ao YouTUbe. Para visualizar o vídeo entre em contato com sua equipe de TI e solicite acesso"
+                    "Percebemos que você não tem acesso ao YouTube. Para visualizar o vídeo entre em contato com sua equipe de TI e solicite acesso"
                 </Box>
                 <Typography sx={{textAlign: 'center', pt: '1rem'}}>Caso a dúvida persista, entre em contato com a CHAC pelo nosso grupo do whatsapp.</Typography>
         </React.Fragment>

@@ -454,15 +454,7 @@ export const TomadaContasEspecial = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       {context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -486,15 +478,7 @@ export const TomadaContasEspecial = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box> : <Autocomplete
       id="tomadaContasEspecialCodigoUnidadeGestora"
       options={codigosCidades}
@@ -572,15 +556,7 @@ export const TomadaContasEspecial = () => {
           2 – Determinada pelo TCEES
         </MenuItem>
       </TextField>
-      <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+      
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -601,15 +577,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialProcesso
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -630,15 +598,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialAnoProcesso
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -682,15 +642,7 @@ export const TomadaContasEspecial = () => {
             de receitas de que resulte dano ao erário.
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -713,15 +665,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialDataCiencia
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -743,15 +687,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialDataInstauracao
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -773,15 +709,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialDataEnvioTribunalContas
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -802,15 +730,7 @@ export const TomadaContasEspecial = () => {
             formik.errors.tomadaContasEspecialValorDebito
           }
         />
-          <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+          
       </Box>
 
       <Box sx={{display: formik.values.tomadaContasEspecialDataEnvioTribunalContas === "" ?'flex':'none' , gap: '1rem'}}>
@@ -843,15 +763,7 @@ export const TomadaContasEspecial = () => {
           <MenuItem value={4}>4 - Finalizada – Dispensado o encaminhamento ao TCEES – art. 9º, IN 32/2014;</MenuItem>
           <MenuItem value={5}>5 - Finalizada - Arquivada antes do encaminhamento ao TCEES – art. 10, IN 32/2014</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: formik.values.tomadaContasEspecialDataEnvioTribunalContas !== "" ?'flex':'none', gap: '1rem'}}>
@@ -882,15 +794,7 @@ export const TomadaContasEspecial = () => {
           <MenuItem value={3}>3 - Com decisão do TCEES pela baixa da responsabilidade pelo débito – art. 20, da IN 32/2014</MenuItem>
           <MenuItem value={4}>4 - Em complementação de informações, após retorno determinado pelo TCEES – art. 15, IN 32/2014</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <div data-button="next-previous">
         <IconButton

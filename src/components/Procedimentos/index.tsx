@@ -438,15 +438,7 @@ export const Procedimentos = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -472,15 +464,7 @@ export const Procedimentos = () => {
           <MenuItem value={1}>1 – Unidade Central </MenuItem>
           <MenuItem value={2}>2 – Unidade Setorial</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       {context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 
         <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -502,15 +486,7 @@ export const Procedimentos = () => {
           }
           disabled
         /> 
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>: <Autocomplete
       id="procedimentosCodigoUnidadeGestora"
       options={codigosCidades}
@@ -546,15 +522,7 @@ export const Procedimentos = () => {
           }
           fullWidth
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       )}
     /> }
@@ -593,15 +561,7 @@ export const Procedimentos = () => {
               }
               fullWidth
             />
-            <Tooltip title="" placement='right'>
-              <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-                setModalOpen(true);
-                setTextoModalCampo("Campo ID Número Registro");
-                setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-              }}>
-                <InfoOutlined />
-              </IconButton>
-            </Tooltip>
+            
           </Box>
         )}
       />}
@@ -632,15 +592,7 @@ export const Procedimentos = () => {
             2 - Qualitativo (se não mensurável quantitativamente)
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -661,15 +613,7 @@ export const Procedimentos = () => {
             formik.errors.procedimentosUniversoAnalisado
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -689,15 +633,7 @@ export const Procedimentos = () => {
             formik.errors.procedimentosAmostraSelecionada
           }
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -722,15 +658,7 @@ export const Procedimentos = () => {
           <MenuItem value={1}>1 – Unidades Físicas </MenuItem>
           <MenuItem value={2}>2 – Valores Monetários</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -754,15 +682,7 @@ export const Procedimentos = () => {
             maxLength: 250
           }}
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -785,15 +705,7 @@ export const Procedimentos = () => {
             maxLength: 250
           }}
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -826,15 +738,7 @@ export const Procedimentos = () => {
           <MenuItem value={17}>17 – Conciliação</MenuItem>
           <MenuItem value={18}>18 – Exame de registros auxiliares</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -867,15 +771,7 @@ export const Procedimentos = () => {
             risco grave e necessidade de correções.
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <div data-button="next-previous">
         <IconButton

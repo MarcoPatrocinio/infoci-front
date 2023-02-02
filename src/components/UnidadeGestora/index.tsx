@@ -334,15 +334,7 @@ export const UnidadeGestora = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -370,15 +362,7 @@ export const UnidadeGestora = () => {
           <MenuItem value={1}>1 – Unidade Central </MenuItem>
           <MenuItem value={2}>2 – Unidade Setorial</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       {context.formInfo.nomeUnidadeGestora !== 'SECONT' ? 
       <Box sx={{display: 'flex', gap: '1rem'}}>
@@ -400,15 +384,7 @@ export const UnidadeGestora = () => {
           }
           disabled
         />
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box> : <Autocomplete
       id="unidadeGestoraCodigoUnidadeGestora"
       options={codigosCidades}
@@ -444,15 +420,7 @@ export const UnidadeGestora = () => {
             }
             fullWidth
           />
-          <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+          
       </Box>
       )}
     /> }
@@ -484,15 +452,7 @@ export const UnidadeGestora = () => {
           <MenuItem value={3}>3 - Irregular</MenuItem>
           <MenuItem value={4}>4 - Não foi emitida opinião</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <Box sx={{display: 'flex', gap: '1rem'}}>
         <TextField
@@ -523,15 +483,7 @@ export const UnidadeGestora = () => {
           <MenuItem value={1}>1 - Sim</MenuItem>
           <MenuItem value={2}>2 - Não</MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
 
       <Box sx={{display: formik.values.unidadeGestoraFatoRelevanteRelaci == "1"?'flex': 'none', gap: '1rem'}}>
@@ -594,15 +546,7 @@ export const UnidadeGestora = () => {
             99 - Outros
           </MenuItem>
         </TextField>
-        <Tooltip title="" placement='right'>
-          <IconButton sx={{height: 'max-content', alignSelf: 'center'}} onClick={() => {
-            setModalOpen(true);
-            setTextoModalCampo("Campo ID Número Registro");
-            setVideoModalCampo("https://www.youtube.com/embed/Ru6Ld6nH6C8?start=1&end=120")
-          }}>
-            <InfoOutlined />
-          </IconButton>
-        </Tooltip>
+        
       </Box>
       <div data-button="next-previous">
         <IconButton
