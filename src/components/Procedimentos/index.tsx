@@ -644,7 +644,7 @@ export const Procedimentos = () => {
           id="procedimentosUnidadeAmostraSelecionada"
           name="procedimentosUnidadeAmostraSelecionada"
           value={formik.values.procedimentosUnidadeAmostraSelecionada}
-          label="Tipo de Procedimento Aplicado"
+          label="Unidade da Amostra Selecionada"
           onChange={formik.handleChange}
           error={
             formik.touched.procedimentosUnidadeAmostraSelecionada &&
