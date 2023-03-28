@@ -681,7 +681,7 @@ export const Procedimentos = () => {
             formik.errors.procedimentosDescricaoAmostraSelecionada
           }
           inputProps={{
-            maxLength: 1000
+            maxLength: 250
           }}
         />
         
