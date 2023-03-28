@@ -100,11 +100,12 @@ export const Procedimentos = () => {
     const dataGetProcedimento = await getProcedimentos()
 
     if (dataGetProcedimento.length > 0) {
+      /*
       const dataGetProcedimentosReorderId: DataProcedimentoProps[] = await reorderIdNumRegistro(
         dataGetProcedimento,
       )
-
-      setDataProcedimentos([...dataGetProcedimentosReorderId])
+      */
+      setDataProcedimentos([...dataGetProcedimento])
 
       setSelectProcedimento(dataGetProcedimento.length - 1)
 
@@ -666,10 +667,11 @@ export const Procedimentos = () => {
           variant="outlined"
           fullWidth
           id="procedimentosDescricaoAmostraSelecionada"
-          label={`Descrição da Amostra (Máximo de 250 caracteres)`}
+          label={`Descrição da Amostra (Máximo de 1000 caracteres)`}
           name="procedimentosDescricaoAmostraSelecionada"
           value={formik.values.procedimentosDescricaoAmostraSelecionada}
           onChange={formik.handleChange}
+          multiline
           error={
             formik.touched.procedimentosDescricaoAmostraSelecionada &&
             Boolean(formik.errors.procedimentosDescricaoAmostraSelecionada)
@@ -679,7 +681,7 @@ export const Procedimentos = () => {
             formik.errors.procedimentosDescricaoAmostraSelecionada
           }
           inputProps={{
-            maxLength: 250
+            maxLength: 1000
           }}
         />
         
