@@ -100,12 +100,12 @@ export const Procedimentos = () => {
     const dataGetProcedimento = await getProcedimentos()
 
     if (dataGetProcedimento.length > 0) {
-      /*
+      
       const dataGetProcedimentosReorderId: DataProcedimentoProps[] = await reorderIdNumRegistro(
         dataGetProcedimento,
       )
-      */
-      setDataProcedimentos([...dataGetProcedimento])
+      
+      setDataProcedimentos([...dataGetProcedimentosReorderId])
 
       setSelectProcedimento(dataGetProcedimento.length - 1)
 
@@ -151,12 +151,15 @@ export const Procedimentos = () => {
   ) {
     const dataGetProcedimentosReorderId = dataGetProcedimentos.map(
       async (data: DataProcedimentoProps, index: number) => {
+        /*
         const response = await axios.put(
           `${baseAPI.URL}/forms/${context.formInfo.id}/procedimentos/${data.id}`,
           { procedimentosIdNumRegistro: `${('0000' + (index + 1)).slice(-5)}` },
           { headers: baseAPI.HEADERS(token) },
         )
-        return response.data
+        */
+          data.procedimentosIdNumRegistro = `${('0000' + (index + 1)).slice(-5)}`
+        return data
       },
     )
 
@@ -667,7 +670,7 @@ export const Procedimentos = () => {
           variant="outlined"
           fullWidth
           id="procedimentosDescricaoAmostraSelecionada"
-          label={`Descrição da Amostra (Máximo de 1000 caracteres)`}
+          label={`Descrição da Amostra (Máximo de 250 caracteres)`}
           name="procedimentosDescricaoAmostraSelecionada"
           value={formik.values.procedimentosDescricaoAmostraSelecionada}
           onChange={formik.handleChange}
