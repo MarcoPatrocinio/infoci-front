@@ -62,9 +62,11 @@ interface DataProcedimentoProps {
   procedimentosTipoProcedimentoAnalisado: string
   procedimentosSituacaoAnalise: string
 }
+
 interface DataTomadaContasEspecialProps {
   id: number
   tomadaContasEspecialIdNumRegistro: string
+  tomadaContasEspecialExisteTCEInstaurada: string,
   tomadaContasEspecialCodigoUnidadeGestora: string
   tomadaContasEspecialTipoTce: string
   tomadaContasEspecialProcesso: string
@@ -254,6 +256,8 @@ export const GenerateXML = () => {
             id: data.id,
             tomadaContasEspecialIdNumRegistro:
               data.tomadaContasEspecialIdNumRegistro,
+            tomadaContasEspecialExisteTCEInstaurada: 
+            data.tomadaContasEspecialExisteTCEInstaurada,
             tomadaContasEspecialCodigoUnidadeGestora:
               data.tomadaContasEspecialCodigoUnidadeGestora,
             tomadaContasEspecialTipoTce: data.tomadaContasEspecialTipoTce,
