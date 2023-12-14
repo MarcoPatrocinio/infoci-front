@@ -10,7 +10,7 @@ const validationSchema = yup.object({
     .required('O campo é obrigatório')
     .matches(/^[0-9]+$/, "Apenas números")
     .max(5, 'Máximo de 5 dígitos'),
-  tomadaContasEspecialExisteTCEInstaurada: yup
+  tomadaContasEspecialExisteTceInstaurada: yup
     .string()
     .required('O campo é obrigatório')
     .matches(/^[0-9]+$/, "Apenas números")

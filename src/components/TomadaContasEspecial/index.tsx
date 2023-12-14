@@ -22,7 +22,7 @@ import ModalExplicacaoCampo from '../ModalExplicacaoCampo'
 interface DataTomadaContasEspecialProps {
   id: number
   tomadaContasEspecialIdNumRegistro: string
-  tomadaContasEspecialExisteTCEInstaurada: string,
+  tomadaContasEspecialExisteTceInstaurada: string,
   tomadaContasEspecialCodigoUnidadeGestora: string
   tomadaContasEspecialTipoTce: string
   tomadaContasEspecialProcesso: string
@@ -133,8 +133,8 @@ export const TomadaContasEspecial = () => {
           id: data.id,
           tomadaContasEspecialIdNumRegistro:
             data.tomadaContasEspecialIdNumRegistro,
-          tomadaContasEspecialExisteTCEInstaurada: 
-          data.tomadaContasEspecialExisteTCEInstaurada,
+          tomadaContasEspecialExisteTceInstaurada: 
+          data.tomadaContasEspecialExisteTceInstaurada,
           tomadaContasEspecialCodigoUnidadeGestora:
             data.tomadaContasEspecialCodigoUnidadeGestora,
           tomadaContasEspecialTipoTce:
@@ -183,7 +183,7 @@ export const TomadaContasEspecial = () => {
   async function newTomadaContasEspecial() {
     const valuesTCE = {
       tomadaContasEspecialIdNumRegistro: ``,
-      tomadaContasEspecialExisteTCEInstaurada: 1,
+      tomadaContasEspecialExisteTceInstaurada: 1,
       tomadaContasEspecialCodigoUnidadeGestora: `${context.formInfo.nomeUnidadeGestora !== 'SECONT' ? context.formInfo.codigoUnidadeGestoraCidades : ''}`,
       tomadaContasEspecialTipoTce: ``,
       tomadaContasEspecialProcesso: ``,
@@ -304,7 +304,7 @@ export const TomadaContasEspecial = () => {
       dataTomadaContasEspecial[selectTomadaContasEspecial]
         .tomadaContasEspecialIdNumRegistro
     }`,
-    tomadaContasEspecialExisteTCEInstaurada : 1,
+    tomadaContasEspecialExisteTceInstaurada : 1,
     tomadaContasEspecialCodigoUnidadeGestora: `${
       dataTomadaContasEspecial.length ?
       dataTomadaContasEspecial[selectTomadaContasEspecial]
