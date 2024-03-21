@@ -207,7 +207,7 @@ const pontosControle = [
   {cod: "2.6.5", label: "Realização de despesas sem previsão em lei específica."},
   {cod: "2.6.6", label: "Dispensa e inexigibilidade de licitação."},
   {cod: "2.7.1.1", label: "Resolutividade das inconsistências indicativas informadas na remessa de dados da folha de pagamento (PCF)"},
-  {cod: "2.5.1.2", label: "Resolutividade dos pontos de controle existentes na remessa de dados da folha de pagamento (PCF)"},
+  {cod: "2.7.1.2", label: "Resolutividade dos pontos de controle existentes na remessa de dados da folha de pagamento (PCF)"},
   {cod: "2.7.2.1", label: "Registro de Admissões – envio ao TCE"},
   {cod: "2.7.2.2", label: "Registro de Admissões – apreciação do controle interno"},
   {cod: "2.7.2.3", label: "Registro de Aposentadorias, reserva remunerada e reforma – envio ao TCE"},
